@@ -38,13 +38,12 @@ async def invite(ctx):
 @bot.command()
 async def credits(ctx):
     """ credits """
-    await ctx.send(")
+    await ctx.send("* insert github and Saniya's instagram*")
 
 @bot.command(pass_context=True)
 async def say(ctx, *, message):
     """ Mr MrFilloFluffy says... """
     try:
-        print(message, gen_text(message))
         await ctx.send(file=gen_text(message))
     except Exception as e:
         print('something went wong {}'.format(e))
