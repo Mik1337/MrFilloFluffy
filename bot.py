@@ -38,7 +38,7 @@ async def invite(ctx):
 @bot.command()
 async def credits(ctx):
     """ credits """
-    await ctx.send("* insert github and Saniya's instagram*")
+    await ctx.send("https://github.com/Mik1337/MrFilloFluffy")
 
 @bot.command(pass_context=True)
 async def say(ctx, *, message):
