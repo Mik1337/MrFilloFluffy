@@ -80,7 +80,11 @@ async def credits(ctx):
 
 @bot.command(pass_context=True)
 async def say(ctx, *, message):
-    """ Mr MrFilloFluffy says... """
+    """
+        Mr MrFilloFluffy says...
+        ps: if you wanna format it urself, use | for new line and add !wrap in the end
+            i.e. fluffy say first line | second line | third line !wrap
+    """
     message = message.split(' ')
     *message, wrap = message
     message = " ".join(message)
