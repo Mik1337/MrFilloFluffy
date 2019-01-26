@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from PIL import ImageFont, Image, ImageDraw
 from discord.ext import commands
 import discord.utils
@@ -36,7 +38,7 @@ def gen_text(text:str, wrap) -> str:
     file = discord.File('./fluffs/fluff-{}.png'.format(entropy), filename="MrFluffSays.png")
     return file
 
-client = discord.Client ()
+client = discord.Client()
 bot = commands.Bot(command_prefix='fluffy ', description='Mr FilloFluffy says...')
 
 @bot.event
@@ -48,6 +50,16 @@ async def on_message(message):
     if message.author == bot.user:
         return
     await bot.process_commands(message)
+
+@bot.command()
+async def stats(ctx):
+    """ Sends stats about Mr FilloFluffy """
+    await ctx.send(
+        "Mr FilloFluffy is in {} servers, serving {} users".format(
+            len([i for i in bot.guilds]),  # servers
+            len([i for i in bot.get_all_members()])  # members
+        )
+    )
 
 @bot.command()
 async def invite(ctx):
