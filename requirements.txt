@@ -1,10 +1,9 @@
+discord
 aiohttp==3.4.4
 async-timeout==3.0.1
 attrs==18.2.0
 cffi==1.11.5
 chardet==3.0.4
-discord==0.16.12
-discord.py==1.0.0a1634+g7f4c57d
 idna==2.8
 idna-ssl==1.1.0
 multidict==4.5.2
