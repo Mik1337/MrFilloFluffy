@@ -18,7 +18,7 @@ def msg_split(text:str) -> str:
     length = len(text_length)
     j=0
     for i in range(length):
-        if sum(text_length[j:i]) >= 15:
+        if sum(text_length[j:i]) > 15:
             text_array.insert(i,'\n')
             j=i
     return ' '.join(text_array)
@@ -29,9 +29,9 @@ def gen_text(text:str, wrap) -> str:
         text = text.replace('|', '\n')
     else:
         text = msg_split("{} {}".format(text, wrap))
-    image = Image.open('/home/mik/Desktop/python/MrFillofluffy/MrFilloFluffy.png')
+    image = Image.open('./MrFilloFluffy.png')
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype("/home/mik/Desktop/python/MrFillofluffy/font/comic-sans-ms/COMIC.TTF",23)
+    font = ImageFont.truetype("./font/comic-sans-ms/COMIC.TTF",23)
     draw.text(xy=(216, 150),text=text,fill=(30, 30, 30), font=font)
     entropy = ''.join(random.choice("abcedfghijklmnopqrstuvwxyz1234567890") for i in range(10))
     image.save('./fluffs/fluff-{}.png'.format(entropy))
