@@ -1,5 +1,4 @@
 pillow
 discord
-random
 json
 
